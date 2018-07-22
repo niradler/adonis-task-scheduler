@@ -62,10 +62,10 @@ class TaskController {
          });
         }
       });
+      return tasks;
     } catch (error) {
       console.log(error);
     }
-    return tasks;
   }
 
 }
