@@ -41,11 +41,12 @@ class TaskController {
     return response.redirect('/tasks')
   }
 
-  async check() {
+  async check({request}) {
+    const { ctime } = request.all();
     try {
       const tasks = await Task.query().where('status', 'pending');
       tasks.forEach(task => {
-        const isAfter = moment().isAfter(moment(task.run_at));
+        const isAfter = moment(ctime).isAfter(moment(task.run_at));
         if (isAfter) {
          Task.find(task.id).then((t) => {
           const options = {

@@ -82,7 +82,7 @@
   </section>
 <script>
 setInterval(()=>{
-  fetch('https://adonis-schduler.herokuapp.com/tasks/check').then((response) =>{
+  fetch('https://adonis-schduler.herokuapp.com/tasks/check?ctime' + new Date()).then((response) =>{
       response.json();
     })
 },60000)
