@@ -65,6 +65,7 @@ class TaskController {
     } catch (error) {
       console.log(error);
     }
+    return "done";
   }
 
 }
