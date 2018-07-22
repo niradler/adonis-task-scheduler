@@ -20,6 +20,7 @@ Route.post('register', 'UserController.register')
 
 Route.on('/').render('welcome');
 
+Route.get('/tasks/check', 'TaskController.check');
 Route.get('/tasks', 'TaskController.show').middleware('auth');
 Route.post('/tasks/add', 'TaskController.add').middleware('auth');
 Route.get('/tasks/delete:id', 'TaskController.delete').middleware('auth');
