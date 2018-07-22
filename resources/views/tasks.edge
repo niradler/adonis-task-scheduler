@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Tasks</title>
+  {{ style('style') }}
+</head>
+
+<body>
+  <section class="section ">
+    <div class="container ">
+      <h1 class="title">Tasks</h1>
+      <h2 class="subtitle">
+        Add and Remove Tasks
+      </h2>
+      <div class="column is-6 center">
+        <nav class="panel">
+          <p class="panel-heading">
+            Create Task
+          </p>
+
+          <div class="panel-block">
+            <form class="form" method="POST" action="{{ route('TaskController.add') }}">
+             <div class="field">
+                <div class="control">
+                  <input class="input" type="text" placeholder="name" name="name" required>
+                </div>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <input class="input" type="url" placeholder="url" name="url" required>
+                </div>
+              </div>
+              <div class="field">
+                <div class="select">
+                  <select required name="method" >
+                    <option value="GET">GET</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <input class="input" type="datetime-local" name="time" required />
+                </div>
+              </div>
+              {{ csrfField() }}
+              <div class="field">
+                <button class="button" type="submit">Add</button>
+              </div>
+            </form>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="column is-6 center">
+        <nav class="panel">
+          <p class="panel-heading">
+            Tasks List
+          </p>
+        @each(task in tasks)
+             <div class="panel-block">
+          <div class="column is-10">
+          <ul>
+          <li> <strong>name: </strong> {{task.name}}</li>
+          <li> <strong>time: </strong> {{task.run_at}}</li>
+          <li> <strong>status: </strong> {{task.status}}</li>
+          </ul>
+            </div>
+             <div class="column is-2">
+           <a class="button is-danger" href="{{ route('TaskController.delete', { id: task.id }) }}" >X</a>
+            </div>
+          </div>
+          @endeach
+        </nav>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>

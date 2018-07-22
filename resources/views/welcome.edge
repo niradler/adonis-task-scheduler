@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Schduler Demo</title>
+  {{ style('style') }}
+</head>
+<body>
+ <section class="hero is-primary is-medium">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+       Scheduler
+      </h1>
+    </div>
+  </div>
+</section>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Login</h1>
+       <div class="column is-6 center">
+       <form class="form" method="POST" action="{{ route('UserController.login') }}">
+             <div class="field">
+                <div class="control">
+                  <input class="input" type="email" placeholder="email" name="email" required>
+                </div>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <input class="input" type="password" placeholder="password" name="password" required>
+                </div>
+              </div>
+              {{ csrfField() }}
+              <div class="field">
+                <button class="button" type="submit">Sign-in</button>
+              </div>
+            </form>
+             </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Register</h1>
+       <div class="column is-6 center">
+       <form class="form" method="POST" action="{{ route('UserController.register') }}">
+             <div class="field">
+                <div class="control">
+                  <input class="input" type="email" placeholder="email" name="email" required>
+                </div>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <input class="input" type="password" placeholder="password" name="password" required>
+                </div>
+              </div>
+              {{ csrfField() }}
+              <div class="field">
+                <button class="button" type="submit">Sign-in</button>
+              </div>
+            </form>
+             </div>
+    </div>
+  </section>
+
+</body>
+</html>

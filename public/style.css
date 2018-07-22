@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css');
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+/* color: white;
+  background-color: #220052; */
+}
+
+.center {
+  margin: auto;
+}
