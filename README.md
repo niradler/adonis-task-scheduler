@@ -1,4 +1,8 @@
 # adonis-task-scheduler
 
 ### demo link
-https://adonis-schduler.herokuapp.com/tasks
+
+email: test@test.com
+password: test
+
+https://adonis-schduler.herokuapp.com
